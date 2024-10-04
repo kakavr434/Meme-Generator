@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Meme Maker</title>
+</head>
+<body>
+  <header class="header">
+    <img src="../static/img/logo.svg" alt="logo" width="50" height="50">
+    <ul class="main-list">
+        <li class="list__item">
+          <a href="">Main Menu</a>
+        </li>
+        <li class="list__item">
+          <a href="">Collection</a>
+        </li>
+        <li class="list__item">
+          <a href="">Feed Back</a>
+        </li>
+    </ul>
+  </header>
+  <main>
+    {% block content %}
+    <div class="form-block">
+      <h1>Make your meme!</h1>
+      <form method="POST" action="{{ url_for('index') }}">
+        <ul class="form-list">
+          <li class="form-list_item">
+            <label for="image-selector">Choose a meme</label>
+            <select name="image-selector" id="image-selector">
+              <option value="logo.svg" {% if selected_image == 'logo.svg' %}selected{% endif %}>Choose a Meme</option>
+              <option value="meme_1.jpg" {% if selected_image == 'meme_1.jpg' %}selected{% endif %}>Disaster Girl</option>
+              <option value="meme_2.jpg" {% if selected_image == 'meme_2.jpg' %}selected{% endif %}>2 buttons</option>
+              <!--Görev #1. Yeni meme buraya ekleyin -->
+              <option value="meme_3.jpg" {% if selected_image == 'meme_3.jpg' %}selected{% endif %}>Drake Hotline Bling</option>
+
+              <option value="meme_4.jpg" {% if selected_image == 'meme_4.jpg' %}selected{% endif %}>Distracted Boyfriend</option>
+
+              <option value="meme_5.jpg" {% if selected_image == 'meme_5.jpg' %}selected{% endif %}>I am once again asking for your support</option>
+
+              <option value="meme_6.jpg" {% if selected_image == 'meme_6.jpg' %}selected{% endif %}>Floating Baloon</option>
+
+              <option value="meme_7.jpg" {% if selected_image == 'meme_7.jpg' %}selected{% endif %}>Left Exit 12 Off Ramp</option>
+
+              <option value="meme_8.jpg" {% if selected_image == 'meme_8.jpg' %}selected{% endif %}>Draw 25</option>
+
+              <option value="meme_9.jpg" {% if selected_image == 'meme_9.jpg' %}selected{% endif %}>Change My Mind</option>
+
+              <option value="meme_10.jpg" {% if selected_image == 'meme_10.jpg' %}selected{% endif %}>Sad Pablo Escobar</option>
+
+              <option value="meme_11.jpg" {% if selected_image == 'meme_11.jpg' %}selected{% endif %}>Epic Handshake</option>
+
+              <option value="meme_12.jpg" {% if selected_image == 'meme_12.jpg' %}selected{% endif %}>Gru's Plan</option>
+
+              <option value="meme_13.jpg" {% if selected_image == 'meme_13.jpg' %}selected{% endif %}>Batman Slapping Robin</option>
+
+              <option value="meme_14.jpg" {% if selected_image == 'meme_14.jpg' %}selected{% endif %}>SpongeBob Mocking</option>
+
+              <option value="meme_15.jpg" {% if selected_image == 'meme_15.jpg' %}selected{% endif %}>X, X Everywhere </option>
+
+              <option value="meme_16.jpg" {% if selected_image == 'meme_16.jpg' %}selected{% endif %}>Woman Screaming At Cat </option>
+
+              <option value="meme_17.jpg" {% if selected_image == 'meme_17.jpg' %}selected{% endif %}>Expanding Brain </option>
+
+              <option value="meme_18.jpg" {% if selected_image == 'meme_18.jpg' %}selected{% endif %}>One Does Not Simply </option>
+
+              <option value="meme_19.jpg" {% if selected_image == 'meme_19.jpg' %}selected{% endif %}>Bike Fall </option>
+
+              <option value="meme_20.jpg" {% if selected_image == 'meme_20.jpg' %}selected{% endif %}>Success Kid</option>
+
+              <option value="meme_21.jpg" {% if selected_image == 'meme_21.jpg' %}selected{% endif %}>Monkey Puppet</option>
+
+              <option value="meme_22.jpg" {% if selected_image == 'meme_22.jpg' %}selected{% endif %}>This Is Where I'd Put My Trophy If I Had One</option>
+
+              <option value="meme_23.jpg" {% if selected_image == 'meme_23.jpg' %}selected{% endif %}>Hide the Pain Harold</option>
+
+              <option value="meme_24.jpg" {% if selected_image == 'meme_24.jpg' %}selected{% endif %}>Is This A Pigeon</option>
+
+              <option value="meme_25.jpg" {% if selected_image == 'meme_25.jpg' %}selected{% endif %}>Clown Makeup</option>
+
+              <option value="meme_26.jpg" {% if selected_image == 'meme_26.jpg' %}selected{% endif %}>Oprah You Get A</option>
+            
+              <option value="meme_27.jpg" {% if selected_image == 'meme_27.jpg' %}selected{% endif %}>Boardroom Meeting Suggestion</option>
+
+              <option value="meme_28.jpg" {% if selected_image == 'meme_28.jpg' %}selected{% endif %}>Mother Ignoring Kid Drowning</option>
+            </select> 
+          </li>
+          <li class="form-list_item">
+            <label for="textTop">Upper text here</label>
+            <input class="input_text" type="text" placeholder="Top text" name="textTop">
+          </li>
+          <li class="form-list_item">
+            <label for="textBottom">Bottom text here</label>
+            <input class="input_text" type="text" placeholder="Bottom text" name="textBottom">
+          </li>
+          <li class="form-list_item">
+            <label for="color-selector">Choose the color of the text</label>
+            <select name="color-selector" id="color-selector">
+              <option value="white" {% if selected_color == 'white' %}selected{% endif %}>White</option>
+              <option value="black" {% if selected_color == 'black' %}selected{% endif %}>Black</option>
+              <option value="red" {% if selected_color == 'red' %}selected{% endif %}>Red</option>
+              <!--Ek görev #1. Yeni renkler ekleyin -->
+
+
+            </select>
+          </li>
+          <li class="form-list_item">
+            <label for="textTop_y">Put the Upper text on Y axis </label>
+            <input class="input_text" id="textTop_y" type="text" placeholder="Top text" name="textTop_y">
+          </li>
+          <li class="form-list_item">
+            <label for="textBottom_y">Put the bottom text on Y axis</label>
+            <input class="input_text" id="textBottom_y" type="text" placeholder="Bottom text" name="textBottom_y">
+          </li>
+          <button type="submit">Meme maker</button>
+        </ul>
+      </form>
+    </div>
+    <div class="meme-block" id="memeBlock">
+      
+      <p class="text_top" style="color: {{color}}">
+        <!-- Görev #2. Değişkenleri HTML’e taşıma -->{{Upper_Text}}
+      </p>
+
+      <img class="meme" src="{{ url_for('serve_images', path=selected_image) }}" alt="{{ selected_image }}">
+
+      <p class="text_bottom" style="">
+        <!-- Görev #2. Değişkenleri HTML’e taşıma -->{{Bottom_Text}}
+      </p>
+    </div>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
